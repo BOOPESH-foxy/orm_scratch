@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mysql-development:
+    image: mysql:8.0.17
+    environment:
+      MYSQL_ROOT_PASSWORD: orm_scratch
+      MYSQL_DATABASE: orm_scratch
+    ports:
+      - "3306:3306"
+
+
+
