@@ -1,9 +1,9 @@
 from importlib.metadata import metadata
 from sqlite3 import connect
-from sqlalchemy import create_engine
+
 from sqlalchemy import Table,Column,Integer,String,MetaData
 
-from .main import engine
+from main import engine
 engine=engine.ready()
 
 meta=MetaData()
@@ -15,4 +15,4 @@ create_table=Table(
     Column("Ticket Amount",Integer),
     Column("Net amount(INC GST)",Integer),
 )
-meta.create_all()
+meta.create_all(engine)
