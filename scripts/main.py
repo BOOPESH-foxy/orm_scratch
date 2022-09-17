@@ -1,4 +1,5 @@
 from curses import echo
+from select import select
 from sqlite3 import DatabaseError
 from turtle import delay
 from venv import create
@@ -9,7 +10,7 @@ import docker_connect
 import pwinput
 import os
 
-class engine:
+class engine():
     # def __init__(self):
     #     engine.dict_get()
     #     self.engine_var = engine.get_engine()
@@ -55,14 +56,14 @@ class engine:
     
     
     def __init__(self):
-        self.connecction_request=docker_connect.database_connect
+        self.connection_request=docker_connect.database_connect
         
     def connection_do_Exist(self):
-        if(self.connecction_request == 1):
+        if(self.connection_request == 1):
             print("connection established to docker SQL engine")
         
     
-    def login_page():
+    def login_page(self):
         # username = str(input("USERNAME:"))
         # password = pwinput.pwinput(prompt='PASSWORD:',mask='*')
         print("\n\n\t\t\t\t|WELCOME|")
@@ -73,8 +74,7 @@ class engine:
     
 if __name__=='__main__':
     
-    def execution():
-        obj = engine.__init__()
+        obj=engine()
         obj.connection_do_Exist()
         obj.login_page()
     
