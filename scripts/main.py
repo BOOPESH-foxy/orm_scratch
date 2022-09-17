@@ -9,6 +9,7 @@ import docker_authentication
 import docker_connect
 import pwinput
 import os
+import table_creation
 
 class engine():
     # def __init__(self):
@@ -66,8 +67,11 @@ class engine():
     def login_page(self):
         # username = str(input("USERNAME:"))
         # password = pwinput.pwinput(prompt='PASSWORD:',mask='*')
-        print("\n\n\t\t\t\t|WELCOME|")
-        return input("1 CREATE TABLE \n2 VIEW TABLE \n3 DELETE TABLE\nCHOISE:")
+        os.system('clear')
+        txt="|WELCOME|"
+        print(txt.center(100))
+        return input("1. CREATE TABLE \n2. VIEW TABLE \n3. DELETE TABLE\n\n\nCHOISE:")
+
     
     
     
@@ -76,9 +80,7 @@ if __name__=='__main__':
     
         obj=engine()
         obj.connection_do_Exist()
-        obj.login_page()
-    
-    # case=engine.login_page()
-    # if case == 1:
-    #     table_creation
-    
+        choise = obj.login_page()
+        
+        if(choise == 1):
+            table_creation.create_table()
