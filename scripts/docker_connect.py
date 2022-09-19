@@ -7,5 +7,4 @@ database_connect = mysql.connector.connect(
     user =docker_authentication.docker.get('username') ,
     password = docker_authentication.docker.get('passcode')
 )
-
 # Printing the connection object

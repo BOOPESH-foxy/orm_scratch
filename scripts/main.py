@@ -11,6 +11,7 @@ import pwinput
 import os
 import table_creation
 
+
 class engine():
     # def __init__(self):
     #     engine.dict_get()
@@ -60,7 +61,7 @@ class engine():
         self.connection_request=docker_connect.database_connect
         
     def connection_do_Exist(self):
-        if(self.connection_request == 1):
+        if(self.connection_request == True):
             print("connection established to docker SQL engine")
         
     
@@ -70,17 +71,13 @@ class engine():
         os.system('clear')
         txt="|WELCOME|"
         print(txt.center(100))
-        return input("1. CREATE TABLE \n2. VIEW TABLE \n3. DELETE TABLE\n\n\nCHOISE:")
-
-    
-    
-    
-    
+        choise =  input("1. CREATE TABLE \n2. VIEW TABLE \n3. DELETE TABLE\n\n\nCHOISE:")
+        if (choise == 1):
+            table_creation.table.table_creator_fun()
+            
+            
 if __name__=='__main__':
     
-        obj=engine()
-        obj.connection_do_Exist()
-        choise = obj.login_page()
-        
-        if(choise == 1):
-            table_creation.create_table()
+    obj=engine()
+    obj.connection_do_Exist()
+    obj.login_page()

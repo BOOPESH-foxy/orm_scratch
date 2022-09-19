@@ -1,5 +1,7 @@
-# import math
+from ast import main
+import math
 
-# def gst(Ticket_amount):
-#     Net_amount=Ticket_amount+(Ticket_amount/100)*28
-#     return Net_amount
+class gst_calculation:
+    def gst():
+        main.Ticket_amount
+        return Ticket_amount+(Ticket_amount/100)*28
