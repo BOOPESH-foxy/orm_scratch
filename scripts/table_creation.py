@@ -1,8 +1,11 @@
 from importlib.metadata import metadata
 from sqlite3 import connect
-
+from venv import create
+from sqlalchemy import create_engine
 from sqlalchemy import Table,Column,Integer,String,MetaData
 # import main
+import docker_connect
+engine = create_engine(docker_connect.database_connect)
 meta = MetaData()
 
 class table:
