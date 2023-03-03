@@ -1,13 +1,9 @@
 from curses import echo
 from select import select
-from sqlite3 import DatabaseError
 from turtle import delay
 from venv import create
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-import docker_authentication
 import docker_connect
-import pwinput
+from peewee import *
 import os
 import table_creation
 
@@ -58,7 +54,7 @@ class engine():
     
     
     def __init__(self):
-        self.connection_request=docker_connect.database_connect
+        self.connection_request= docker_connect.database_connect
         
     def connection_do_Exist(self):
         if(self.connection_request == True):
